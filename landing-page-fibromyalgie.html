@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibromyalgie et Thermalisme - Le MagBook qui change la donne</title>
+    <style>
+        :root {
+            --primary-color: #002FA7;
+            --secondary-color: #4b8ae1;
+            --accent-color: #FF00FF;
+            --text-color: #333333;
+            --light-bg: #f9f9f9;
+            --dark-bg: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pre-order-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .book-presentation {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .book-image {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .book-image img {
+            max-width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        
+        .book-details {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+        }
+        
+        .book-details h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .book-sample {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+        
+        .book-sample > div {
+            flex: 1;
+        }
+        
+        .book-sample > div:first-child {
+            margin-right: 10px;
+        }
+        
+        .book-sample > div:last-child {
+            margin-left: 10px;
+        }
+        
+        .book-sample img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .book-stats {
+            background-color: var(--light-bg);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 30px;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .features {
+            padding: 60px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .feature-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 30px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .testimonials {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .testimonial-item {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .testimonial-quote {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .author-section {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .author-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        
+        .author-image {
+            flex: 0 0 300px;
+            padding-right: 30px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .author-bio {
+            flex: 2;
+            min-width: 280px;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .countdown {
+            font-size: 2rem;
+            margin: 30px 0;
+            font-weight: bold;
+        }
+        
+        .price-container {
+            margin: 30px 0;
+        }
+        
+        .regular-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 1.2rem;
+        }
+        
+        .sale-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .guarantee {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .faq-section {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .form-button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Tablettes */
+        @media (max-width: 992px) {
+            .book-image, .book-details {
+                padding: 15px;
+            }
+            
+            .book-details h2 {
+                font-size: 1.8rem;
+            }
+            
+            .author-image {
+                flex: 0 0 250px;
+            }
+        }
+        
+        /* Responsive adjustments for medium screens */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 0 30px;
+            }
+            
+            .logo-container img {
+                width: 100% !important;
+                max-width: 500px !important;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            .book-image, .book-details {
+                flex: 100%;
+            }
+            
+            .book-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .book-details h2 {
+                text-align: center;
+            }
+            
+            p img[alt="Couverture du MagBook"] {
+                width: 200px !important;
+            }
+            
+            .feature-item, .testimonial-item, .stat-item {
+                min-width: 100%;
+            }
+            
+            .countdown, .sale-price {
+                font-size: 1.8rem;
+            }
+            
+            .author-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .author-image {
+                flex: 0 0 250px;
+                padding-right: 0;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            
+            .author-image img {
+                max-width: 250px;
+            }
+            
+            .author-bio h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Responsive adjustments for small screens (smartphones) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-icon {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .countdown {
+                font-size: 1.5rem;
+            }
+            
+            .sale-price {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .book-sample {
+                flex-direction: column;
+            }
+            
+            .book-sample > div {
+                margin: 10px 0 !important;
+            }
+            
+            p img[alt="Couverture du MagBook"] {
+                width: 150px !important;
+            }
+            
+            .features h2, .book-stats h2, .testimonials h2, .faq-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .feature-item {
+                padding: 20px 15px;
+            }
+            
+            .feature-item h3 {
+                font-size: 1.2rem;
+            }
+            
+            .author-image {
+                flex: 0 0 200px;
+            }
+            
+            .author-image img {
+                max-width: 200px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container" style="text-align: center; margin-bottom: 30px;">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d43ad6bcc7e_BAN2LANDINGPAGE.png" alt="L'Instant Opportun" style="width: 700px; height: auto;">
+            </div>
+            <span class="pre-order-badge">SORTIE OFFICIELLE - ÉDITION LIMITÉE</span>
+            <h1>Fibromyalgie, douleurs chroniques et Thermalisme : L'Alliance Thérapeutique</h1>
+            <p>Découvrez comment les cures thermales peuvent soulager durablement la fibromyalgie, les douleurs chroniques et améliorer votre qualité de vie</p>
+        </div>
+    </header>
+    
+    <section class="book-presentation">
+        <div class="container">
+            <div class="book-image">
+                <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d40cd2d3f58_COUV462x570.png" alt="Couverture du MagBook Fibromyalgie et Thermalisme" style="width: 400px; max-width: 100%; height: auto; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); border-radius: 8px; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;" />
+            </div>
+            <div class="book-details">
+                <h2>Le premier MagBook dédié à la fibromyalgie, aux douleurs chroniques et au thermalisme</h2>
+                <p>Vous souffrez de douleurs chroniques, de fatigue intense et de troubles du sommeil ? La fibromyalgie bouleverse votre quotidien et vous cherchez des solutions pour retrouver une meilleure qualité de vie ?</p>
+                <p><strong>Ce MagBook vous est spécialement destiné.</strong></p>
+                <p>Fruit de nombreuses années de recherche et d'accompagnement de patients, ce guide complet vous propose une approche novatrice et naturelle : le thermalisme comme allié thérapeutique contre la fibromyalgie.</p>
+                <p>À travers 200 pages richement illustrées, vous découvrirez pourquoi les cures thermales représentent aujourd'hui l'une des réponses les plus prometteuses face à cette maladie complexe et souvent incomprise.</p>
+                
+                <div class="book-sample">
+                    <div>
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d440200b03c_MagBookSommaire_1.png" alt="Exemple de pages du MagBook - Sommaire">
+                    </div>
+                    <div>
+                        <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d440507e905_68-69_1.png" alt="Exemple de pages du MagBook - Contenu">
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-bottom: 25px;">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d40cd2d3f58_COUV462x570.png" alt="Couverture du MagBook" style="width: 300px; margin-bottom: 15px;">
+                    <br>
+                    <a href="https://www.calameo.com/read/your-publication-id" target="_blank" style="color: var(--primary-color); text-decoration: underline; font-weight: bold;">Feuilleter quelques pages du MagBook</a>
+                </p>
+                
+                <a href="https://www.linstantopportun.com/product-page/mon-programme-anti-stress-en-7-jours" class="cta-button" target="_blank">Je commande mon exemplaire</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="book-stats">
+        <div class="container">
+            <h2>La réalité de la fibromyalgie en France</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">2 à 5%</div>
+                    <p>de la population française touchée par la fibromyalgie</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">80%</div>
+                    <p>de femmes parmi les personnes atteintes</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3 ans</div>
+                    <p>en moyenne avant d'obtenir un diagnostic précis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features">
+        <div class="container">
+            <h2>Ce que vous découvrirez dans ce MagBook</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Comprendre la fibromyalgie</h3>
+                    <p>Explorez les dernières avancées scientifiques sur l'origine et les mécanismes de la fibromyalgie, ainsi que les symptômes caractéristiques qui vous aideront à mieux comprendre cette pathologie.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-hot-tub"></i></div>
+                    <h3>Le thermalisme expliqué</h3>
+                    <p>Découvrez comment l'eau thermale agit sur les douleurs chroniques, la fatigue et le stress. Apprenez tout sur les stations spécialisées dans la fibromyalgie et les protocoles de soins existants.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Témoignages et expertise</h3>
+                    <p>Rencontrez patients et professionnels de santé qui partagent leur expérience du thermalisme appliqué à la fibromyalgie. Des histoires réelles de personnes qui ont retrouvé espoir et mobilité.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Bourbon-Lancy : un modèle d'excellence</h3>
+                    <p>Plongez au cœur de cette station thermale bourguignonne reconnue pour son programme spécifique de prise en charge de la fibromyalgie, devenue référence nationale.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-procedures"></i></div>
+                    <h3>Les soins adaptés</h3>
+                    <p>Analyse détaillée des différents soins thermaux et de leur impact sur les douleurs diffuses, la raideur musculaire et la fatigue chronique associées à la fibromyalgie.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clipboard-list"></i></div>
+                    <h3>Guide pratique pour votre cure</h3>
+                    <p>Toutes les informations pratiques pour préparer votre cure thermale : démarches administratives, prise en charge, choix de l'hébergement, timing idéal et conseil pour maximiser les bénéfices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>Ils ont retrouvé une meilleure qualité de vie</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        "Après 7 ans de douleurs et d'errance médicale, ma première cure thermale à Bourbon-Lancy a été une révélation. Les effets ont duré plusieurs mois, me permettant de réduire considérablement ma prise de médicaments."
+                    </div>
+                    <div class="testimonial-author">Marie, 43 ans</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        "J'étais très sceptique avant d'essayer le thermalisme, mais les résultats m'ont bluffé. Les douleurs ont diminué et j'ai enfin pu retrouver un sommeil réparateur. Ce MagBook explique parfaitement ce que j'ai vécu."
+                    </div>
+                    <div class="testimonial-author">Philippe, 51 ans</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-quote">
+                        "Grâce aux conseils de ce guide, j'ai pu optimiser ma première cure. L'approche holistique du thermalisme m'a permis de reprendre le contrôle de mon corps et de mes douleurs. Une véritable renaissance."
+                    </div>
+                    <div class="testimonial-author">Sophie, 38 ans</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="author-section">
+        <div class="container">
+            <div class="author-container">
+                <div class="author-image">
+                    <img src="https://d1yei2z3i6k35z.cloudfront.net/4851707/67d42fa4ad429_TTrecadrebleuklein.png" alt="Thierry Thomas - Auteur" />
+                </div>
+                <div class="author-bio">
+                    <h2>À propos de l'auteur</h2>
+                    <p>Thierry Thomas, fondateur de la collection "l'Art de Vivre en Pleine Santé" est éditeur et journaliste spécialisé dans les médecines complémentaires et le bien-être. Après avoir lui-même découvert l'impact du thermalisme sur les patients atteints de fibromyalgie lors de son travail en station thermale, il a consacré plusieurs années à étudier cette approche thérapeutique.</p>
+                    <p>Auteur de plusieurs ouvrages sur la santé intégrative, il est également le créateur de l'application de cohérence cardiaque Respirelax, utilisée par des milliers de patients souffrant de douleurs chroniques.</p>
+                    <p>Son expérience unique et sa connaissance approfondie du thermalisme font de lui un expert reconnu dans le domaine de la prise en charge naturelle de la fibromyalgie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="order" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Commandez votre exemplaire dès maintenant</h2>
+                <p>Ne laissez pas la fibromyalgie dicter votre quotidien. Découvrez comment le thermalisme peut transformer votre vie et vous offrir un soulagement durable.</p>
+                
+                <div class="countdown">
+                    Offre de lancement - Plus que 3 jours !
+                </div>
+                
+                <div class="price-container">
+                    <div class="regular-price">Prix normal : 24,90€</div>
+                    <div class="sale-price">19,90€</div>
+                    <p>+ Livraison gratuite en France métropolitaine</p>
+                </div>
+                
+                <div class="bonus">
+                    <p><strong>BONUS OFFERT</strong> : Pour toute commande avant le 30 mars, recevez gratuitement le guide digital "5 exercices de cohérence cardiaque pour soulager la douleur au quotidien"</p>
+                </div>
+                
+                <a href="https://www.linstantopportun.com/product-page/mon-programme-anti-stress-en-7-jours" class="cta-button" target="_blank">Je commande mon exemplaire</a>
+                
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions fréquemment posées</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Qu'est-ce qu'un MagBook exactement ?</div>
+                <div class="faq-answer">
+                    <p>Un MagBook est un format hybride entre le magazine et le livre, combinant la richesse visuelle et la facilité de lecture d'un magazine avec la profondeur et l'exhaustivité d'un livre. Ce format permet d'aborder des sujets complexes de manière accessible et agréable.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Est-ce que ce MagBook peut remplacer un avis médical ?</div>
+                <div class="faq-answer">
+                    <p>Non, ce MagBook est un complément d'information qui ne remplace en aucun cas une consultation médicale. Il vous aide à mieux comprendre la fibromyalgie et le thermalisme comme option thérapeutique, mais toute décision concernant votre santé doit être prise en concertation avec votre médecin.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Les cures thermales sont-elles prises en charge par l'Assurance Maladie ?</div>
+                <div class="faq-answer">
+                    <p>Oui, les cures thermales peuvent être prises en charge par l'Assurance Maladie à hauteur de 65% (voire 100% dans certains cas) sur prescription médicale. Le MagBook détaille toutes les démarches pour obtenir cette prise en charge et optimiser votre séjour thermal.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Sous quel format est disponible ce MagBook ?</div>
+                <div class="faq-answer">
+                    <p>Le MagBook est disponible en version papier (format A4, 90 pages en couleur sur papier de qualité) ainsi qu'en version numérique PDF. Les deux versions sont identiques en termes de contenu.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quand recevrai-je ma commande ?</div>
+                <div class="faq-answer">
+                    <p>Les commandes sont expédiées sous 48h ouvrées. Le délai de livraison est généralement de 3 à 5 jours ouvrés pour la France métropolitaine. Un email de confirmation avec le numéro de suivi vous sera envoyé dès l'expédition de votre commande.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="newsletter-form">
+                <h3>Restez informé des prochaines parutions</h3>
+                <p>Inscrivez-vous à notre newsletter pour recevoir des articles exclusifs sur la fibromyalgie et le bien-être</p>
+                <form>
+                    <input type="email" placeholder="Votre adresse email" class="form-input" required>
+                    <button type="submit" class="form-button">S'inscrire</button>
+                </form>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 L'Instant Opportun - Tous droits réservés
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
